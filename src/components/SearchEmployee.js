@@ -10,15 +10,15 @@ function RenderEmployee({employee}) {
             <div key={employee.id} className="col-12 mt-5">
                 <Media tag="li" className="empmedia">
                 <Media left middle>
-                    <Media object src={employee.image} alt={employee.name} className="empimg ml-3 mt-3"/>
+                    <Media object src={employee.image} alt={employee.name} className="empimg ml-3 mt-3 mb-3"/>
                 </Media>
                 <Media body className="ml-5 mt-3 mb-1 empdet">
                     <Media heading>{employee.name}</Media>
                     <h5>Top Skills of the employee</h5>
                     <ul className="empskill">
-                        <li><strong>{employee.skills[0].toUpperCase()}</strong></li>
-                        <li><strong>{employee.skills[1].toUpperCase()}</strong></li>
-                        <li><strong>{employee.skills[2].toUpperCase()}</strong></li>
+                        <li><strong>{employee.skills[0].type.toUpperCase()}</strong></li>
+                        <li><strong>{employee.skills[1].type.toUpperCase()}</strong></li>
+                        <li><strong>{employee.skills[2].type.toUpperCase()}</strong></li>
                     </ul>
                 </Media>
                 <Link to={`/profile/${employee.id}`}>
@@ -63,6 +63,8 @@ class SearchEmployee extends Component{
                     <Media list>
                         <RenderEmployee employee={this.props.employee[0]}/>
                         <RenderEmployee employee={this.props.employee[1]}/>
+                        <RenderEmployee employee={this.props.employee[2]}/>
+
                     </Media>
                     </Stagger>
                     </div>

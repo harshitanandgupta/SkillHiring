@@ -1,5 +1,5 @@
 import React,{Component} from 'react'
-import {Navbar,NavbarToggler,NavbarBrand,Collapse,Nav,NavItem,NavLink,Jumbotron} from 'reactstrap'
+import {Navbar,NavbarToggler,NavbarBrand,Collapse,Nav,NavItem,Jumbotron} from 'reactstrap'
 import {Link} from 'react-router-dom'
 import Typical from 'react-typical'
 class HeaderComponent extends Component

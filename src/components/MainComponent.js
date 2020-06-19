@@ -4,7 +4,7 @@ import SearchEmployee from './SearchEmployee'
 import {Modal,ModalBody,ModalHeader,Button,Form} from 'reactstrap'
 import ProfileView from './ProfileView'
 import { Switch, Route, Redirect } from 'react-router-dom/cjs/react-router-dom.min';
-
+import Footer from './FooterComponent'
 class MainComponent extends Component {
     constructor(props){
         super(props);
@@ -25,48 +25,80 @@ class MainComponent extends Component {
                 {
                     id:1,
                     name:'Harshit Gupta',
-                    image:'assets/images/harshit.png',
+                    image:'/assets/images/emp3.png',
+                    address:'Kolkata,India',
                     phone:'+917003214924',
                     email:'harshitanandgupta@gmail.com',
+                    designation:'Software Developer',
                     experience:[
-                        'XYZ Limited',
-                        'TechSolutions Limited'
+                        {name:'XYZ Limited',startyear:'Jan 2016',endyear:'Current',description:'Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.'},
+                        {name:'TechSolutions Limited',startyear:'Jun 2014',endyear:'Jan 2016',description:'Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.'},
                     ],
                     projects :[
-                        'https://link1.com',
-                        'https://link2.com'
+                        {name:'Weather App',link:'https://link1.com',description:'Describing the project...Describing the project...Describing the project...Describing the project...'},
+                        {name:'Health Shopping',link:'https://link2.com',description:'Describing the project...Describing the project...Describing the project...Describing the project...'},
+
                     ],
-                    certificates:[
-                        'Certification 1',
-                        'Certification 2'
+                    education:[
+                        {name:'Delhi Public School',degree:'High School',startyear:'2014',endyear:'2016'},
+                        {name:'Techology of College',degree:'BTech',startyear:'2016',endyear:'2020'}
                     ],
-                    bio:'This is a test bio of a Employee.This is a test bio of a Employee.This is a test bio of a Employee.This is a test bio of a Employee.',
+                    bio:'This is a test bio of a Employee.This is a test bio of a Employee.This is a test bio of a Employee.',
                     skills:[
-                        'c','cpp','python'
+                        {id:1,type:'c',rating:90},{id:2,type:'cpp',rating:40},{id:3,type:'python',rating:30}
                     ]
                },
                {
-                id:2,
-                name:'Rahul Gupta',
-                image:'assets/images/harshit.png',
-                phone:'+917003214924',
-                email:'harshitanandgupta@gmail.com',
-                experience:[
-                    'XYZ Limited',
-                    'TechSolutions Limited'
-                ],
-                projects :[
-                    'https://link1.com',
-                    'https://link2.com'
-                ],
-                certificates:[
-                    'Certification 1',
-                    'Certification 2'
-                ],
-                bio:'This is a test bio of a Employee.This is a test bio of a Employee.This is a test bio of a Employee.This is a test bio of a Employee.',
-                skills:[
-                    'c','nodejs','python'
-                ]
+                    id:2,
+                    name:'John Snow',
+                    image:'/assets/images/emp2.png',
+                    address:'Delhi,India',
+                    phone:'+917743214924',
+                    email:'hanhgmnandgupta@gmail.com',
+                    designation:'Software Developer',
+                    experience:[
+                        {name:'XYZ Limited',startyear:'Jan 2016',endyear:'Current',description:'Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.'},
+                        {name:'TechSolutions Limited',startyear:'Jun 2014',endyear:'Jan 2016',description:'Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.'},
+                    ],
+                    projects :[
+                        {name:'Weather App',link:'https://link1.com',description:'Describing the project...Describing the project...Describing the project...Describing the project...'},
+                        {name:'Health Shopping',link:'https://link2.com',description:'Describing the project...Describing the project...Describing the project...Describing the project...'},
+
+                    ],
+                    education:[
+                        {name:'Delhi Public School',degree:'High School',startyear:'2014',endyear:'2016'},
+                        {name:'Techology of College',degree:'BTech',startyear:'2016',endyear:'2020'}
+                    ],
+                    bio:'This is a test bio of a Employee.This is a test bio of a Employee.This is a test bio of a Employee.',
+                    skills:[
+                        {id:1,type:'c',rating:90},{id:2,type:'cpp',rating:40},{id:3,type:'python',rating:30}
+                    ]
+                },
+                {
+                    id:3,
+                    name:'Mary Rose',
+                    image:'/assets/images/1.png',
+                    address:'Kolkata,India',
+                    phone:'+91453214924',
+                    email:'dfsfdfndgupta@gmail.com',
+                    designation:'Software Developer II',
+                    experience:[
+                        {name:'XYZ Limited',startyear:'Jan 2016',endyear:'Current',description:'Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.'},
+                        {name:'TechSolutions Limited',startyear:'Jun 2014',endyear:'Jan 2016',description:'Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.'},
+                    ],
+                    projects :[
+                        {name:'Cab App',link:'https://link1.com',description:'Describing the project...Describing the project...Describing the project...Describing the project...'},
+                        {name:'Health Shopping',link:'https://link2.com',description:'Describing the project...Describing the project...Describing the project...Describing the project...'},
+
+                    ],
+                    education:[
+                        {name:'National Public School',degree:'High School',startyear:'2014',endyear:'2016'},
+                        {name:'College of Engginering',degree:'BTech',startyear:'2016',endyear:'2020'}
+                    ],
+                    bio:'This is a test bio of a Employee.This is a test bio of a Employee.This is a test bio of a Employee.',
+                    skills:[
+                        {id:1,type:'c',rating:90},{id:2,type:'cpp',rating:40},{id:3,type:'python',rating:30}
+                    ]
                 }
             ]
         }
@@ -168,7 +200,7 @@ class MainComponent extends Component {
                 <Route exact path="/profile/:id" component={Profile}/>
                 <Redirect to="/home" />
             </Switch>
-            
+            <Footer />
             </div>
             
         )
