@@ -1,5 +1,6 @@
 import React,{Component} from 'react'
 import {Navbar,NavbarToggler,NavbarBrand,Collapse,Nav,NavItem,NavLink,Jumbotron} from 'reactstrap'
+import {Link} from 'react-router-dom'
 import Typical from 'react-typical'
 class HeaderComponent extends Component
 {
@@ -27,13 +28,13 @@ class HeaderComponent extends Component
             <Collapse isOpen={this.state.isNavOpen} navbar>
               <Nav navbar className="ml-auto">
                 <NavItem>
-                  <NavLink className="nav-link"  to='/home'><span className="fa fa-home fa-lg"></span> Home</NavLink>
+                  <Link className="nav-link"  to='/home'><span className="fa fa-home fa-lg"></span> Home</Link>
                 </NavItem>
                 <NavItem>
-                  <NavLink className="nav-link" to='/aboutus'><span className="fa fa-info fa-lg"></span> About Us</NavLink>
+                  <Link className="nav-link" to='/aboutus'><span className="fa fa-info fa-lg"></span> About Us</Link>
                 </NavItem>
                 <NavItem>
-                  <NavLink className="nav-link" to='/contactus'><span className="fa fa-address-card fa-lg"></span> Contact Us</NavLink>
+                  <Link className="nav-link" to='/contactus'><span className="fa fa-address-card fa-lg"></span> Contact Us</Link>
                 </NavItem>
               </Nav>
             </Collapse>
