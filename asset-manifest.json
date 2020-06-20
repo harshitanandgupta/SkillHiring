@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/SkillHiring/static/css/main.e3106115.chunk.css",
+    "main.js": "/SkillHiring/static/js/main.264eca07.chunk.js",
+    "main.js.map": "/SkillHiring/static/js/main.264eca07.chunk.js.map",
+    "runtime-main.js": "/SkillHiring/static/js/runtime-main.69610202.js",
+    "runtime-main.js.map": "/SkillHiring/static/js/runtime-main.69610202.js.map",
+    "static/css/2.cfa47bc4.chunk.css": "/SkillHiring/static/css/2.cfa47bc4.chunk.css",
+    "static/js/2.fcdce2cf.chunk.js": "/SkillHiring/static/js/2.fcdce2cf.chunk.js",
+    "static/js/2.fcdce2cf.chunk.js.map": "/SkillHiring/static/js/2.fcdce2cf.chunk.js.map",
+    "index.html": "/SkillHiring/index.html",
+    "precache-manifest.bfa834e8e037c4adeadbc55305975719.js": "/SkillHiring/precache-manifest.bfa834e8e037c4adeadbc55305975719.js",
+    "service-worker.js": "/SkillHiring/service-worker.js",
+    "static/css/2.cfa47bc4.chunk.css.map": "/SkillHiring/static/css/2.cfa47bc4.chunk.css.map",
+    "static/css/main.e3106115.chunk.css.map": "/SkillHiring/static/css/main.e3106115.chunk.css.map",
+    "static/js/2.fcdce2cf.chunk.js.LICENSE.txt": "/SkillHiring/static/js/2.fcdce2cf.chunk.js.LICENSE.txt",
+    "static/media/font-awesome.css": "/SkillHiring/static/media/fontawesome-webfont.fee66e71.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.69610202.js",
+    "static/css/2.cfa47bc4.chunk.css",
+    "static/js/2.fcdce2cf.chunk.js",
+    "static/css/main.e3106115.chunk.css",
+    "static/js/main.264eca07.chunk.js"
+  ]
+}
