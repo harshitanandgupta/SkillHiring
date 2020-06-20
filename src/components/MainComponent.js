@@ -106,7 +106,17 @@ class MainComponent extends Component {
         this.changeSkill=this.changeSkill.bind(this)
         this.toggleHomeModal=this.toggleHomeModal.bind(this)
         this.handleInputChange = this.handleInputChange.bind(this);
-
+        this.register=this.register.bind(this)
+    }
+    register(new_employee){
+        new_employee.id=this.state.employee.length+1
+        new_employee.image='/assets/images/default.png'
+        this.setState({
+            employee:[
+                ...this.state.employee,
+                new_employee
+            ]
+        })
     }
     changeSkill(updatedskill){
         this.setState({
@@ -198,8 +208,8 @@ class MainComponent extends Component {
                 <Route path="/home" component={()=><SearchEmployee skills={this.state.skills} 
                 employee={this.state.employee} changeSkill={this.changeSkill} 
                 toggleModal={this.toggleHomeModal} isModalopen={this.state.ishomeModalOpen}/> } />
-                <Route exact path="/profile/:id" component={Profile}/>
-                <Route exact path="/register" component={Register}/>
+                <Route exact path="/profile/:id" component={Profile} />
+                <Route exact path="/register" component={()=> <Register signup={this.register}/>} />
 
                 <Redirect to="/home" />
             </Switch>

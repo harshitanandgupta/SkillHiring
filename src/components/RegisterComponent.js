@@ -52,7 +52,89 @@ class Register extends Component{
         this.eduCross=this.eduCross.bind(this)
         this.proonClick=this.proonClick.bind(this)
         this.proCross=this.proCross.bind(this)
+        this.skillCross=this.skillCross.bind(this)
+        this.register=this.register.bind(this)
+    }
+    register(){
+        var error=undefined;
+        if(this.state.name==='' || this.state.address==='' ||this.state.email==='' ||this.state.bio==='' ||this.state.phone==='' ||this.state.designation==='')
+        error='\nPersonal Info Missing'
+        
+        var emp_skills=[],emp_expereince=[],emp_education=[],emp_projects=[]
+        var c=0
+        Object.keys(this.state.skills).forEach((skill)=>{
+            if(skill!=='default' && this.state.skills[skill]!==undefined)
+            {
+                c++;
+                var new_skill={id:c,type:skill,rating:this.state.skills[skill]}
+                emp_skills.push(new_skill)
+            }
+            if(emp_skills.length === 0)
+            error+=' \nAdd a skill'
+        })
+        Object.keys(this.state.experience).forEach((exp)=>{
+            if(this.state.experience[exp] !== undefined){
+            var new_exp={
+                name:this.state.experience[exp].orgname,
+                startyear:this.state.experience[exp].startyear,
+                endyear:this.state.experience[exp].endyear,
+                description:this.state.experience[exp].description
+            }
+            if(new_exp.orgname !== '' && new_exp.startyear !== '' && new_exp.endyear !== '' && new_exp.description !== '' )
+            emp_expereince.push(new_exp)
+            else
+            error+=' \nExpirence info missing'
+            }
 
+        })
+        Object.keys(this.state.education).forEach((exp)=>{
+            if(this.state.education[exp]!==undefined ){
+            var new_edu={
+                name:this.state.education[exp].name,
+                startyear:this.state.education[exp].startyear,
+                endyear:this.state.education[exp].endyear,
+                degree:this.state.education[exp].degree
+            }
+            if(new_edu.name !== '' && new_edu.startyear !== '' && new_edu.endyear !== '' && new_edu.degree !== '')
+            emp_education.push(new_edu)
+            else
+            error+=' \nEducational Details Missing'
+            }
+        })
+        Object.keys(this.state.projects).forEach((exp)=>{
+            if(this.state.projects[exp]!==undefined ){
+            var new_pro={
+                name:this.state.projects[exp].name,
+                link:this.state.projects[exp].link,
+                description:this.state.projects[exp].description
+            }
+            if(new_pro.name !== ''  && new_pro.link !== '' && new_pro.description !== '')
+            emp_projects.push(new_pro)
+            else
+            error+=' \nProject Details Missing'
+            }
+        })
+        console.log(emp_projects)
+        if(error)
+        alert("Please!Fill in all the feilds " + error)
+        else{
+            
+            var new_employee={
+                name:this.state.name,
+                address:this.state.address,
+                email:this.state.email,
+                phone:this.state.phone,
+                bio:this.state.bio,
+                designation:this.state.designation,
+                skills:emp_skills,
+                projects:emp_projects,
+                education:emp_education,
+                experience:emp_expereince
+            }
+            this.props.signup(new_employee)
+            console.log(new_employee)
+            alert("User Successfully Registered...Go to Home Page to filter Employees")
+        }
     }
     skillonClick(){
         this.setState({
@@ -134,6 +216,14 @@ class Register extends Component{
             }
         })
     }
+    skillCross(event){
+        this.setState({
+            skills:{
+                ...this.state.skills,
+                [event.target.id]:undefined
+            }
+        })
+    }
     proonClick(){
         const pro_no='pro'+(Object.keys(this.state.projects).length+1).toString()
         this.setState({
@@ -189,21 +279,31 @@ class Register extends Component{
             })
         }
     }
+    
     render(){
          console.log(this.state.experience)
         const renderskill=Object.keys(this.state.skills).map((item)=>{
             if(this.state.skills[item]!== undefined)
             return (
+                <div><i className="fa fa-times plus-2 pull-right fa-lg" style={{color:"red"}} id={item} onClick={this.skillCross}></i>
             <div className="w3-row-padding">
             <div className="w3-third">
                 <select className="w3-select" name="option" value={item} onChange={this.skillselectchange} id={item}>
                 <option value="default" disabled>Choose</option>
                 <option value="c">C</option>
-                <option value="cpp">CPP</option>
-                <option value="python">PYTHON</option>
+                <option value="cpp">C++</option>
+                <option value="java">Java</option>
+                <option value="python">Python</option>
+                <option value="nodejs">Node JS</option>
+                <option value="reactjs">React JS</option>
+                <option value="rubyonrails">RubyOnRails</option>
+                <option value="angularjs">Angular JS</option>
+                <option value="devops">DevOps</option>
                 </select>
             </div>
-            <div className="w3-twothird pl-2 pt-2"><p >Rating : <input type="range" min="1" max="100" value={this.state.skills[item]} id={item} onChange={this.skillsliderchange}/></p></div>
+            <div className="w3-twothird pl-2 pt-2"><p >Rating : <input type="range" min="1" max="100" value={this.state.skills[item]} id={item} onChange={this.skillsliderchange}/></p>
+            </div>
+            </div>
             </div>
             )
             else
@@ -218,7 +318,7 @@ class Register extends Component{
                 exp_count++;
             return (
                 <div className="mb-4">
-                    <i className="fa fa-times plus-2 pull-right fa-lg" id={item} onClick={this.orgCross}></i>
+                    <i className="fa fa-times plus-2 pull-right fa-lg" style={{color:"red"}} id={item} onClick={this.orgCross}></i>
                     <label htmlFor={`org_orgname_${index}`}><b>{exp_count}. Organisation Name </b></label>
                     <input id={`org_orgname_${index}`} className="w3-input w3-animate-input" type="text" style={{width:"50%"}} placeholder="Company Name"
                     value={this.state.experience[item].orgname} onChange={this.handleInputChange}></input>
@@ -251,7 +351,7 @@ class Register extends Component{
                 edu_count++;
             return (
                 <div className="mb-4">
-                    <i className="fa fa-times plus-2 pull-right fa-lg" id={item} onClick={this.eduCross}></i>
+                    <i className="fa fa-times plus-2 pull-right fa-lg" id={item} onClick={this.eduCross} style={{color:"red"}}></i>
                     <label htmlFor={`edu_name_${index}`}><b>{edu_count}. Institute  Name </b></label>
                     <input id={`edu_name_${index}`} className="w3-input w3-animate-input" type="text" style={{width:"50%"}} placeholder="Institue Name"
                     value={this.state.education[item].name} onChange={this.handleInputChange}></input>
@@ -284,7 +384,7 @@ class Register extends Component{
                 pro_count++;
             return (
                 <div className="mb-4">
-                    <i className="fa fa-times plus-2 pull-right fa-lg" id={item} onClick={this.proCross}></i>
+                    <i className="fa fa-times plus-2 pull-right fa-lg" id={item} onClick={this.proCross} style={{color:"red"}}></i>
                     <label htmlFor={`pro_name_${index}`}><b>{pro_count}. Project Name </b></label>
                     <input id={`pro_name_${index}`} className="w3-input w3-animate-input" type="text" style={{width:"50%"}} placeholder="Project Name"
                     value={this.state.projects[item].name} onChange={this.handleInputChange}></input>
@@ -354,9 +454,9 @@ class Register extends Component{
                 Projects<i className="fa fa-plus-circle plus-2 pull-right" onClick={this.proonClick}></i></h2>
                 {renderpro}
                 </div>
+                <button type="submit"  className="button pull-right mb-3 p-2" onClick={this.register}>Register Now</button>
 
             </div>
-                
             </div>
         )
     }
