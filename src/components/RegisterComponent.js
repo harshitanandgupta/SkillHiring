@@ -27,6 +27,18 @@ class Register extends Component{
                     endyear:'',
                     degree:''
                 }
+            },
+            projects:{
+                pro1:{
+                    name:'',
+                    link:'',
+                    description:''
+                },
+                pro2:{
+                    name:'',
+                    link:'',
+                    description:''
+                }
             }
         }
         this.skillonClick=this.skillonClick.bind(this)
@@ -38,6 +50,8 @@ class Register extends Component{
         this.handleInputChange=this.handleInputChange.bind(this)
         this.eduonClick=this.eduonClick.bind(this)
         this.eduCross=this.eduCross.bind(this)
+        this.proonClick=this.proonClick.bind(this)
+        this.proCross=this.proCross.bind(this)
 
     }
     skillonClick(){
@@ -112,6 +126,27 @@ class Register extends Component{
             }
         })
     }
+    proCross(event){
+        this.setState({
+            projects:{
+                ...this.state.projects,
+                [event.target.id]:undefined
+            }
+        })
+    }
+    proonClick(){
+        const pro_no='pro'+(Object.keys(this.state.projects).length+1).toString()
+        this.setState({
+            projects:{
+                ...this.state.projects,
+                [pro_no]:{
+                    name:'',
+                    link:'',
+                    description:''
+                }
+            }
+        })
+    }
     handleInputChange(event){
         var ret=event.target.id.split("_")
         if(ret[0]==="org"){
@@ -135,6 +170,19 @@ class Register extends Component{
                     ...this.state.education,
                     [index]:{
                         ...this.state.education[index],
+                        [property]:event.target.value
+                    }
+                }
+            })
+        }
+        if(ret[0]==="pro"){
+            const index='pro'+(ret[2]).toString()
+            const property=ret[1]
+            this.setState({
+                projects:{
+                    ...this.state.projects,
+                    [index]:{
+                        ...this.state.projects[index],
                         [property]:event.target.value
                     }
                 }
@@ -229,9 +277,36 @@ class Register extends Component{
             return(<div></div>)
 
         })
+        var pro_count=0
+        const renderpro=Object.keys(this.state.projects).map((item)=>{
+            if(this.state.projects[item]!== undefined){
+                const index=item.charAt(item.length-1)
+                pro_count++;
+            return (
+                <div className="mb-4">
+                    <i className="fa fa-times plus-2 pull-right fa-lg" id={item} onClick={this.proCross}></i>
+                    <label htmlFor={`pro_name_${index}`}><b>{pro_count}. Project Name </b></label>
+                    <input id={`pro_name_${index}`} className="w3-input w3-animate-input" type="text" style={{width:"50%"}} placeholder="Project Name"
+                    value={this.state.projects[item].name} onChange={this.handleInputChange}></input>
+                    <br/>
+                     
+                    <label htmlFor={`pro_link_${index}`}><b>Link</b></label>
+                    <input name={`pro_link_${index}`} id={`pro_link_${index}`} className="w3-input w3-animate-input" type="text" placeholder="Paste Link"
+                    value={this.state.projects[item].link} style={{width:"60%"}} onChange={this.handleInputChange}></input>
+                         <br/>       
+                    <label htmlFor={`pro_description_${index}`}><b>Description</b></label>
+                    <textarea id={`pro_description_${index}`} className="w3-input w3-animate-input" type="text"  placeholder="Describe Your Project"
+                    value={this.state.projects[item].description} name={`pro_description_${index}`} onChange={this.handleInputChange}></textarea>
+                    <hr/>
+                </div>
+            )}
+            else
+            return(<div></div>)
+
+        })
         return (
             <div className="w3-container">
-                <h2 className="w3-text-black w3-center">Employee Registration Form</h2>
+                <h2 className="w3-text-black w3-center m-4">Employee Registration Form</h2>
             <div className="w3-third">
                 <div className="w3-card-4 w3-margin-right w3-margin-bottom p-3">
                     <h2 className="w3-text-grey w3-padding-16"><i className="fa fa-user fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Personal Info</h2>
@@ -262,16 +337,24 @@ class Register extends Component{
                 </div>
             </div>
             <div className="w3-third">
-                <div className="w3-card-4 w3-margin-bottom p-3">
+                <div className="w3-card-4 w3-margin-bottom w3-margin-right p-3">
                 <h2 className="w3-text-grey w3-padding-16"><i className="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>
                 Work Experience <i className="fa fa-plus-circle plus-2 pull-right" onClick={this.exponClick}></i></h2>
                 {renderorg}
                 </div>
-                <div className="w3-card-4 w3-margin-bottom p-3">
+                <div className="w3-card-4 w3-margin-bottom w3-margin-right p-3">
                     <h2 className="w3-text-grey w3-padding-16"><i className="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>
                     Education <i className="fa fa-plus-circle plus-2 pull-right" onClick={this.eduonClick}></i></h2>
                     {renderedu}
                 </div>
+            </div>
+            <div className="w3-third">
+                <div className="w3-card-4 w3-margin-bottom w3-margin-right p-3">
+                <h2 className="w3-text-grey w3-padding-16"><i className="fa fa-tasks fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>
+                Projects<i className="fa fa-plus-circle plus-2 pull-right" onClick={this.proonClick}></i></h2>
+                {renderpro}
+                </div>
+
             </div>
                 
             </div>
