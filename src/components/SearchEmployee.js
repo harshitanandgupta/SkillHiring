@@ -7,9 +7,9 @@ function RenderEmployee({employee}) {
     return (
           
           <Fade in>
-            <div key={employee.id} className="w3-container w3-margin-bottom empmedia">
+            <div key={employee.id} className="w3-container w3-margin-bottom empmedia mb-4">
                 <div className="w3-quarter mt-3">
-                <img src={employee.image} alt={employee.name} className="empimg"/>
+                <img src={employee.image} alt={employee.name} className="empimg rounded-circle w3-card-4 ml-3"/>
                 </div>
                 <div className="w3-threequarter">
                     <div className="w3-half mb-2">
@@ -17,8 +17,11 @@ function RenderEmployee({employee}) {
                         <h5>Top Skills of the employee</h5>
                         <ul className="empskill">
                             <li><strong>{employee.skills[0].type.toUpperCase()}</strong></li>
-                            <li><strong>{employee.skills[1].type.toUpperCase()}</strong></li>
-                            <li><strong>{employee.skills[2].type.toUpperCase()}</strong></li>
+                            {employee.skills[1] ? 
+                            <li><strong>{employee.skills[1].type.toUpperCase()}</strong></li> : {}}
+                            {employee.skills[2] ? 
+                            <li><strong>{employee.skills[2].type.toUpperCase()}</strong></li> : {}}
+                            
                         </ul>
                     </div>
                     <div className="w3-half">

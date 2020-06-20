@@ -55,6 +55,16 @@ class Register extends Component{
         this.skillCross=this.skillCross.bind(this)
         this.register=this.register.bind(this)
     }
+    compare(a, b) {
+        
+        let comparison = 0;
+        if (parseInt(a.rating)  > parseInt(b.rating))
+          comparison = -1;
+        else 
+          comparison = 1;
+        
+        return comparison;
+    }
     register(){
         var error=undefined;
         if(this.state.name==='' || this.state.address==='' ||this.state.email==='' ||this.state.bio==='' ||this.state.phone==='' ||this.state.designation==='')
@@ -72,6 +82,7 @@ class Register extends Component{
             if(emp_skills.length === 0)
             error+=' \nAdd a skill'
         })
+        emp_skills.sort(this.compare)
         Object.keys(this.state.experience).forEach((exp)=>{
             if(this.state.experience[exp] !== undefined){
             var new_exp={

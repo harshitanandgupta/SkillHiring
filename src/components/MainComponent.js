@@ -26,7 +26,7 @@ class MainComponent extends Component {
                 {
                     id:1,
                     name:'Harshit Gupta',
-                    image:'/assets/images/emp3.png',
+                    image:'/assets/images/3.png',
                     address:'Kolkata,India',
                     phone:'+917003214924',
                     email:'harshitanandgupta@gmail.com',
@@ -52,7 +52,7 @@ class MainComponent extends Component {
                {
                     id:2,
                     name:'John Snow',
-                    image:'/assets/images/emp2.png',
+                    image:'/assets/images/2.png',
                     address:'Delhi,India',
                     phone:'+917743214924',
                     email:'hanhgmnandgupta@gmail.com',
@@ -100,6 +100,58 @@ class MainComponent extends Component {
                     skills:[
                         {id:1,type:'c',rating:90},{id:2,type:'cpp',rating:40},{id:3,type:'python',rating:30}
                     ]
+                },
+                {
+                    id:4,
+                    name:'Josepina Albert',
+                    image:'/assets/images/4.png',
+                    address:'Kolkata,India',
+                    phone:'+911403214924',
+                    email:'harhiupta@gmail.com',
+                    designation:'Software Developer',
+                    experience:[
+                        {name:'XYZ Limited',startyear:'Jan 2016',endyear:'Current',description:'Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.'},
+                        {name:'TechSolutions Limited',startyear:'Jun 2014',endyear:'Jan 2016',description:'Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.'},
+                    ],
+                    projects :[
+                        {name:'Weather App',link:'https://link1.com',description:'Describing the project...Describing the project...Describing the project...Describing the project...'},
+                        {name:'Health Shopping',link:'https://link2.com',description:'Describing the project...Describing the project...Describing the project...Describing the project...'},
+
+                    ],
+                    education:[
+                        {name:'Delhi Public School',degree:'High School',startyear:'2014',endyear:'2016'},
+                        {name:'Techology of College',degree:'BTech',startyear:'2016',endyear:'2020'}
+                    ],
+                    bio:'This is a test bio of a Employee.This is a test bio of a Employee.This is a test bio of a Employee.',
+                    skills:[
+                        {id:1,type:'devops',rating:90},{id:2,type:'rubyonrails',rating:40},{id:3,type:'C',rating:30}
+                    ]
+               },
+               {
+                id:5,
+                name:'Doe Bravo',
+                image:'/assets/images/5.png',
+                address:'Kolkata,India',
+                phone:'+917003214924',
+                email:'harshitanandgupta@gmail.com',
+                designation:'Software Developer',
+                experience:[
+                    {name:'XYZ Limited',startyear:'Jan 2016',endyear:'Current',description:'Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.'},
+                    {name:'TechSolutions Limited',startyear:'Jun 2014',endyear:'Jan 2016',description:'Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.'},
+                ],
+                projects :[
+                    {name:'Weather App',link:'https://link1.com',description:'Describing the project...Describing the project...Describing the project...Describing the project...'},
+                    {name:'Health Shopping',link:'https://link2.com',description:'Describing the project...Describing the project...Describing the project...Describing the project...'},
+
+                ],
+                education:[
+                    {name:'Delhi Public School',degree:'High School',startyear:'2014',endyear:'2016'},
+                    {name:'Techology of College',degree:'BTech',startyear:'2016',endyear:'2020'}
+                ],
+                bio:'This is a test bio of a Employee.This is a test bio of a Employee.This is a test bio of a Employee.',
+                skills:[
+                    {id:1,type:'nodejs',rating:90},{id:2,type:'reactjs',rating:40},{id:3,type:'angularjs',rating:30}
+                ]
                 }
             ]
         }
