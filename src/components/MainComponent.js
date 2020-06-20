@@ -5,6 +5,7 @@ import {Modal,ModalBody,ModalHeader,Button,Form} from 'reactstrap'
 import ProfileView from './ProfileView'
 import { Switch, Route, Redirect } from 'react-router-dom/cjs/react-router-dom.min';
 import Footer from './FooterComponent'
+import Register from './RegisterComponent'
 class MainComponent extends Component {
     constructor(props){
         super(props);
@@ -45,7 +46,7 @@ class MainComponent extends Component {
                     ],
                     bio:'This is a test bio of a Employee.This is a test bio of a Employee.This is a test bio of a Employee.',
                     skills:[
-                        {id:1,type:'c',rating:90},{id:2,type:'cpp',rating:40},{id:3,type:'python',rating:30}
+                        {id:1,type:'nodejs',rating:90},{id:2,type:'reactjs',rating:40},{id:3,type:'angularjs',rating:30}
                     ]
                },
                {
@@ -71,7 +72,7 @@ class MainComponent extends Component {
                     ],
                     bio:'This is a test bio of a Employee.This is a test bio of a Employee.This is a test bio of a Employee.',
                     skills:[
-                        {id:1,type:'c',rating:90},{id:2,type:'cpp',rating:40},{id:3,type:'python',rating:30}
+                        {id:1,type:'cpp',rating:90},{id:2,type:'java',rating:40},{id:3,type:'reactjs',rating:30}
                     ]
                 },
                 {
@@ -118,7 +119,7 @@ class MainComponent extends Component {
                 ishomeModalOpen:!this.state.ishomeModalOpen
             }
         )
-        console.log(this.state.ishomeModalOpen)
+        // console.log(this.state.ishomeModalOpen)
     }
     handleInputChange(event) {
         const target = event.target;
@@ -198,6 +199,8 @@ class MainComponent extends Component {
                 employee={this.state.employee} changeSkill={this.changeSkill} 
                 toggleModal={this.toggleHomeModal} isModalopen={this.state.ishomeModalOpen}/> } />
                 <Route exact path="/profile/:id" component={Profile}/>
+                <Route exact path="/register" component={Register}/>
+
                 <Redirect to="/home" />
             </Switch>
             <Footer />

@@ -31,7 +31,7 @@ class HeaderComponent extends Component
                   <Link className="nav-link"  to='/home'><span className="fa fa-home fa-lg"></span> Home</Link>
                 </NavItem>
                 <NavItem>
-                  <Link className="nav-link" to='/aboutus'><span className="fa fa-info fa-lg"></span> About Us</Link>
+                  <Link className="nav-link" to='/register'><span className="fa fa-user-plus fa-lg"></span> Register</Link>
                 </NavItem>
                 <NavItem>
                   <Link className="nav-link" to='/contactus'><span className="fa fa-address-card fa-lg"></span> Contact Us</Link>

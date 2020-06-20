@@ -31,7 +31,10 @@
 .plus-1{
   color: darkorange;
 }
-.plus-1:hover{
+.plus-2{
+  color: black;
+}
+.plus-1:hover,.plus-2:hover{
   
   transform: scale(1.5);
 }
@@ -268,7 +271,7 @@
   font: 40px/1 'Tangerine', sans-serif;
 } */
 
-h1.bonus {
+.bonus {
   text-shadow: 0 1px 0 #ccc,
                0 2px 0 #c9c9c9,
                0 3px 0 #bbb,
@@ -286,6 +289,9 @@ h1.bonus {
 .foot{
   background-color: #282c34;
   color:rgba(255,255,255,0.5);
+}
+.w3-input{
+  border-bottom: 0.5px solid black;
 }
 
 

@@ -33,8 +33,37 @@ function RenderEmployee({employee}) {
 }
 
 class SearchEmployee extends Component{
-     
-
+    isanyFilter(req_skill){
+        var ret=false
+        Object.keys(req_skill).forEach((skill)=>{
+            if(req_skill[skill]===true)
+            ret=true
+        })
+        return ret
+    }
+    matchedSkillCount(empskill,req_skill){
+        let count=0;
+        Object.keys(req_skill).forEach((skill)=>{
+            if(req_skill[skill]===true)
+            {
+                empskill.forEach((item)=>{
+                    if(item.type===skill)
+                    count=count+1
+                })
+            }
+        })
+        return count;
+    }
+    compare(a, b) {
+        
+        let comparison = 0;
+        if (a.count  > b.count) 
+          comparison = -1;
+        else 
+          comparison = 1;
+        
+        return comparison;
+    }
     render(){
         const state_keys=Object.keys(this.props.skills).map((item)=>{
             if(this.props.skills[item]===true)
@@ -43,6 +72,30 @@ class SearchEmployee extends Component{
             )
             return <div></div>
         });
+        // console.log(this.matchedSkillCount(this.props.employee[0].skills,this.props.skills))
+        console.log(this.isanyFilter(this.props.skills))
+        var result=[]
+        if(this.isanyFilter(this.props.skills) === true){
+            this.props.employee.forEach((item)=> {
+                var ret=this.matchedSkillCount(item.skills,this.props.skills)
+                if( ret > 0)
+                result.push({...item,count:ret})
+            })
+            result.sort(this.compare)
+        }
+        else
+        result=this.props.employee
+        var emplist;
+        if(result.length === 0)
+        emplist=(
+            <h3>Sorry , No Registered Employee has this skill!</h3>
+        )
+        else
+        emplist=result.map((item)=>{
+            return (
+                <RenderEmployee employee={item} />
+            )
+        })
         return(
             <div>
             <div className="container">
@@ -61,10 +114,10 @@ class SearchEmployee extends Component{
                     <div className="col-12">
                     <Stagger in >
                     <Media list>
-                        <RenderEmployee employee={this.props.employee[0]}/>
+                        {/* <RenderEmployee employee={this.props.employee[0]}/>
                         <RenderEmployee employee={this.props.employee[1]}/>
-                        <RenderEmployee employee={this.props.employee[2]}/>
-
+                        <RenderEmployee employee={this.props.employee[2]}/> */}
+                        {emplist}
                     </Media>
                     </Stagger>
                     </div>
