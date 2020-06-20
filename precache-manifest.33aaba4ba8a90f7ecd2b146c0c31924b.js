@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "74479131a320c0bc7d69dd17ad1948ea",
+    "revision": "3a51fe155fac4747119ab66e95e4da83",
     "url": "/SkillHiring/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/SkillHiring/static/css/2.cfa47bc4.chunk.css"
   },
   {
-    "revision": "cc65bb661f803a2bee24",
+    "revision": "0014c82194e61c4378cf",
     "url": "/SkillHiring/static/css/main.e3106115.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/SkillHiring/static/js/2.fcdce2cf.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "cc65bb661f803a2bee24",
-    "url": "/SkillHiring/static/js/main.264eca07.chunk.js"
+    "revision": "0014c82194e61c4378cf",
+    "url": "/SkillHiring/static/js/main.7aa15677.chunk.js"
   },
   {
     "revision": "7a4470ae3a701310f068",
