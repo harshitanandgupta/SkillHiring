@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/SkillHiring/static/css/main.e3106115.chunk.css",
-    "main.js": "/SkillHiring/static/js/main.f2caaf29.chunk.js",
-    "main.js.map": "/SkillHiring/static/js/main.f2caaf29.chunk.js.map",
+    "main.js": "/SkillHiring/static/js/main.e4f33d10.chunk.js",
+    "main.js.map": "/SkillHiring/static/js/main.e4f33d10.chunk.js.map",
     "runtime-main.js": "/SkillHiring/static/js/runtime-main.69610202.js",
     "runtime-main.js.map": "/SkillHiring/static/js/runtime-main.69610202.js.map",
     "static/css/2.cfa47bc4.chunk.css": "/SkillHiring/static/css/2.cfa47bc4.chunk.css",
     "static/js/2.fcdce2cf.chunk.js": "/SkillHiring/static/js/2.fcdce2cf.chunk.js",
     "static/js/2.fcdce2cf.chunk.js.map": "/SkillHiring/static/js/2.fcdce2cf.chunk.js.map",
     "index.html": "/SkillHiring/index.html",
-    "precache-manifest.2a15329dad32b8d7c01dd3298592a86e.js": "/SkillHiring/precache-manifest.2a15329dad32b8d7c01dd3298592a86e.js",
+    "precache-manifest.873744ed717348815b08e65f054a1ca6.js": "/SkillHiring/precache-manifest.873744ed717348815b08e65f054a1ca6.js",
     "service-worker.js": "/SkillHiring/service-worker.js",
     "static/css/2.cfa47bc4.chunk.css.map": "/SkillHiring/static/css/2.cfa47bc4.chunk.css.map",
     "static/css/main.e3106115.chunk.css.map": "/SkillHiring/static/css/main.e3106115.chunk.css.map",
@@ -21,6 +21,6 @@
     "static/css/2.cfa47bc4.chunk.css",
     "static/js/2.fcdce2cf.chunk.js",
     "static/css/main.e3106115.chunk.css",
-    "static/js/main.f2caaf29.chunk.js"
+    "static/js/main.e4f33d10.chunk.js"
   ]
 }
